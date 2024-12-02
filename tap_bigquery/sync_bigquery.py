@@ -181,11 +181,11 @@ def do_sync(config, state, stream):
     singer.write_schema(tap_stream_id, stream.schema.to_dict(),
                         stream.key_properties)
 
-    print("STREAM")
-    print(stream)
+    LOGGER.info("STREAM")
+    LOGGER.info(stream)
     
-    print("METADATA")
-    print(metadata)
+    LOGGER.info("METADATA")
+    LOGGER.info(metadata)
 
     keys = {"table": metadata["table"],
             "columns": metadata["columns"],
