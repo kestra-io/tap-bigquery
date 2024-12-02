@@ -183,13 +183,16 @@ def do_sync(config, state, stream):
 
     LOGGER.info("STREAM")
     LOGGER.info(stream)
+
+    import time
+    time.sleep(2)
     
     LOGGER.info("METADATA")
     LOGGER.info(metadata)
 
-    keys = {"table": metadata["table"],
-            "columns": metadata["columns"],
-            "datetime_key": metadata.get("datetime_key"),
+    keys = {"table": stream.get("table"),
+            "columns": stream.get("columns"),
+            "datetime_key": stream.get("datetime_key"),
             "start_datetime": start_datetime,
             "end_datetime": end_datetime
             }
